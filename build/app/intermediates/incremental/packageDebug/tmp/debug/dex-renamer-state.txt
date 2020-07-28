@@ -1,4 +1,4 @@
-#Tue Jul 28 06:49:26 GMT-03:00 2020
+#Tue Jul 28 07:17:22 GMT-03:00 2020
 base.0=C\:\\Users\\Tita\\Documents\\projetosFlutter\\frases_do_dia\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

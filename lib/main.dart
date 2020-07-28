@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(MaterialApp(
@@ -13,6 +14,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  var _frases = [
+    "Sou apenas um pequeno planeta que se perde diariamente em todo o seu universo.",
+    "Novas amizades serão sempre bem-vindas para darem cor e alegria ao meu dia a dia.",
+    "Gratidão não é pagamento, mas um reconhecimento que se demonstra no dia a dia.",
+    "Nem toda mudança importante acontece de repente e faz barulho, algumas são silenciosas e vão se fazendo no dia a dia."
+  ];
+
+  var _fraseGerada = "Clique abaixo para gerar uma frase!";
+
+  void _gerarFrase() {
+    // 0, 1 , 2, 3
+    var numeroSorteado = Random().nextInt(_frases.length);
+
+    setState(() {
+      _fraseGerada = _frases[numeroSorteado];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +52,7 @@ class _HomeState extends State<Home> {
             children: <Widget>[
               Image.asset("images/logo.png"),
               Text(
-                "Clique abaixo para gerar uma frase!",
+                _fraseGerada,
                 textAlign: TextAlign.justify,
                 style: TextStyle(
                     fontSize: 25,
@@ -49,7 +68,7 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.bold),
                 ),
                 color: Colors.green,
-                onPressed: () {},
+                onPressed: _gerarFrase,
               )
             ],
           ),
